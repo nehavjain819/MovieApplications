@@ -1,0 +1,74 @@
+﻿@model IEnumerable<MovieApplication_Midterm.Models.CartsDatabase>
+
+@{
+    ViewBag.Title = "AddtoCart";
+}
+
+<div style="background-color: #474747; padding: 10px; margin-top:10px;">
+    <h2 style=" COLOR: white; font-weight:bold; text-align: center; ">YOUR SHOPPING CART</h2>
+
+
+    <table style="color: white; background: gray;" class="table col-xs-12 col-sm-12">
+        <thead>
+            <tr>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th class="col">
+                    @Html.DisplayNameFor(model => model.Gross)
+                </th>
+
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    @using (Html.BeginForm("DeleteEntry", "Home"))
+                    {
+                        <td>
+                            <input style=" background: none; border: none;" name="Name" value="@Html.DisplayFor(modelItem => item.Name)" />
+
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Gross)
+                        </td>
+                        <td>
+                            <input style=" color: white; background-color: #4CAF50; font-size: large; width: 150px;" type="submit" value="Remove" />
+                        </td>
+                    }
+                </tr>
+            }
+            <tr>
+                <td>
+                    Total Gross is :
+                </td>
+                <td>
+                    @ViewBag.Message
+
+                </td>
+
+                <td>
+                    <input type="text" style=" color: black; width: 100%; margin-bottom: 9px;" name="CardsDetails" value="Please Enter Debit or Credit cards Detail!" />
+                    @using (Html.BeginForm("PlaceOrder", "Home"))
+                    {
+                        <input style=" color: white; background-color: #4CAF50; font-size: large; width: 150px;" type="submit" value="Place Order" />
+
+                    }
+
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <div style=" color: yellow; font-size: large;">
+        You will get the 10 points at each transaction on your Card. Enjoy the Shopping!!!
+
+    </div>
+    <div style=" color: yellow; text-decoration: underline; font-size: medium;">
+        <span style=" color: yellow; text-decoration: underline; font-size: medium;">@Html.ActionLink("Continue Shopping", "Index")</span>
+    </div>
+</div>
+
+

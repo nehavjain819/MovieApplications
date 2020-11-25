@@ -1,0 +1,34 @@
+﻿@model IEnumerable<MovieApplication_Midterm.Models.Movie>
+
+@{
+    ViewBag.Title = "Movie";
+}
+
+<h2></h2>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {
+    <div class="col-lg-4">
+        @using (Html.BeginForm("MoviesCategory", "Home"))
+        {
+            <img height="250px" width="100%" src="~/Images/@Html.DisplayFor(modelItem => item.Image)" />
+
+            <div class="hidden" style="text-align:center; font-size:30px; font:bold;">
+               <input name="Category" value="@Html.DisplayFor(modelItem => item.Category)" type="text" />
+            </div>
+    <div>
+        <input style="width: 100%;
+        max-width: none;
+        font-size: 24px;
+        background: darkred;
+        color: white;
+        border: 2px solid white;" type="submit" value="@Html.DisplayFor(modelItem => item.Category)" />
+    </div>
+        }
+        </div>
+        
+    }
+
+</div>

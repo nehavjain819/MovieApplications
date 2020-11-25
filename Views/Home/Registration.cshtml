@@ -1,0 +1,37 @@
+﻿@model MovieApplication_Midterm.Models.login
+
+@{
+    ViewBag.Title = "Registration";
+}
+
+<h2></h2>
+@using (Html.BeginForm("Registration", "Home"))
+{
+
+    <div class="row" style="margin-top:30px;">
+        <div class="col-lg-4">
+
+        </div>
+        <div style=" text-align: center; color: black; background: #e6e4e4; padding: 20px; border: 2px solid;" class="col-lg-4">
+            <h2 style=" MARGIN: 10PX; font-weight: bolder; font-size: 30px;"></h2>
+
+            <div style="MARGIN: 10PX;" class="row">
+              Enter UserName : @Html.TextBoxFor(model => model.User_Name)
+
+            </div>
+            <div style="MARGIN: 10PX;" class="row">
+             Enter Password : @Html.PasswordFor(model => model.Password)
+              
+            </div>
+
+            <div class="row" style="MARGIN: 10PX;">
+                <input style=" background: green; border: 1px solid; font-size: x-large; width: 200px; color: white; 
+ font-weight: bold; border: 2px solid black; padding: 5px;" type="submit" value="Registration" />
+            </div>
+          
+        </div>
+        <div class="col-lg-4">
+
+        </div>
+    </div>
+}

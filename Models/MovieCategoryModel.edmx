@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MoviesCategoryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MovieCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Director" Type="nvarchar(max)" />
+          <Property Name="Rating" Type="nvarchar(max)" />
+          <Property Name="Trailor Link" Type="nvarchar(max)" />
+          <Property Name="Category" Type="nvarchar(max)" />
+          <Property Name="Image" Type="nvarchar(max)" />
+          <Property Name="Stars" Type="nvarchar(max)" />
+          <Property Name="Gross" Type="nvarchar(max)" />
+          <Property Name="Votes" Type="nvarchar(max)" />
+          <Property Name="Time" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="MoviesCategoryModelStoreContainer">
+          <EntitySet Name="MovieCategory" EntityType="Self.MovieCategory" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MoviesCategoryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MovieCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Director" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Rating" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Trailor_Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Stars" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Gross" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Votes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Time" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="MoviesDataEntities2" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MovieCategories" EntityType="Self.MovieCategory" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MoviesCategoryModelStoreContainer" CdmEntityContainer="MoviesDataEntities2">
+          <EntitySetMapping Name="MovieCategories">
+            <EntityTypeMapping TypeName="MoviesCategoryModel.MovieCategory">
+              <MappingFragment StoreEntitySet="MovieCategory">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Director" ColumnName="Director" />
+                <ScalarProperty Name="Rating" ColumnName="Rating" />
+                <ScalarProperty Name="Trailor_Link" ColumnName="Trailor Link" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Stars" ColumnName="Stars" />
+                <ScalarProperty Name="Gross" ColumnName="Gross" />
+                <ScalarProperty Name="Votes" ColumnName="Votes" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
